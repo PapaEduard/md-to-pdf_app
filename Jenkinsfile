@@ -8,7 +8,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_IMAGE = 'yourdockerhubusername/md-to-pdf-app'
+        DOCKER_IMAGE = 'edy2010/md-to-pdf-app'
         CONTAINER_NAME = 'md2pdf_job'
         PDF_OUTPUT = 'results/file1.pdf'
     }
@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: "${params.BRANCH_NAME}", url: 'https://your.git.repo.url.git'
+                git branch: "${params.BRANCH_NAME}", url: 'https://github.com/PapaEduard/md-to-pdf_app.git'
             }
         }
 
