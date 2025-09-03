@@ -1,0 +1,8 @@
+services:
+  md2pdf:
+    build: .
+    restart: always
+    volumes:
+      - ./inputs:/src/inputs
+      - ./results:/src/results
+    command: ./inputs/main.md ./results/file1.pdf
