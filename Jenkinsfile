@@ -8,7 +8,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_IMAGE = 'edy2010/md-to-pdf-app'
+        DOCKER_IMAGE = 'edy2010/md_to_pdf/md-to-pdf-app'
         CONTAINER_NAME = 'md2pdf_job'
         PDF_OUTPUT = 'results/file1.pdf'
     }
