@@ -11,6 +11,7 @@ pipeline {
         DOCKER_IMAGE = 'edy2010/md_to_pdf/md-to-pdf-app'
         CONTAINER_NAME = 'md2pdf_job'
         PDF_OUTPUT = 'results/file1.pdf'
+        DOCKER_TOKEN = credentials('edy-dock')
     }
 
     stages {
@@ -26,7 +27,20 @@ pipeline {
             }
             steps {
                 script {
-                    docker.build("${DOCKER_IMAGE}").push()
+                    sh"""
+                    docker build -t "${env.DOCKER_IMAJE}" .
+                    """
+                }
+            }
+        }
+
+        stage('Push to Hub') {
+            steps {
+                script {
+                    sh """
+                    docker login -u edy2010 -p ${env.DOCKER_TOKEN}
+                    docker push "${env.DOCKER_IMAGE}"
+                    """
                 }
             }
         }
