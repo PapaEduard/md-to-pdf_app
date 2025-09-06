@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     sh"""
-                    docker build -t "${env.DOCKER_IMAJE}" .
+                    docker build -t "${env.DOCKER_IMAGE}" .
                     """
                 }
             }
