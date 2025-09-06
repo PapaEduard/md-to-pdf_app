@@ -1,6 +1,6 @@
 services:
   md2pdf:
-    build: .
+    image: ${APP_IMAGE}
     restart: always
     volumes:
       - ./inputs:/src/inputs
