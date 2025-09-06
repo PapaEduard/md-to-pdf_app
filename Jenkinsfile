@@ -22,9 +22,6 @@ pipeline {
         }
 
         stage('Build Docker Image') {
-            when {
-                expression { return params.BUILD_IMAGE }
-            }
             steps {
                 script {
                     sh"""
